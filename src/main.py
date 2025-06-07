@@ -28,11 +28,11 @@ def run_api():
     app = getattr(api_module, "app")  # Assume que a FastAPI está exposta como "app"
 
     def start_uvicorn():
-        uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")
+        uvicorn.run(app, host="127.0.0.1", port=8574, log_level="info")
 
     thread = threading.Thread(target=start_uvicorn, daemon=True)
     thread.start()
-    print("API FastAPI rodando em background na porta 8000")
+    print("API FastAPI rodando em background na porta 8574")
 
 
 def run_exercises(base_path: str, levels: List[str]) -> None:

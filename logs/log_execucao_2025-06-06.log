@@ -2203,3 +2203,150 @@ TimeoutError: The read operation timed out
 2025-06-06 22:23:11.627 | SUCCESS  | utils.log_decorator:wrapper:49 - Função check_urls_parallel executada com sucesso em 10.23 segundos
 2025-06-06 22:23:13.774 | SUCCESS  | utils.log_decorator:wrapper:49 - Função check_urls_sequential executada com sucesso em 2.15 segundos
 2025-06-06 22:23:13.777 | SUCCESS  | utils.compare_times:compare_execution_times:15 - Execução concluída com sucesso! O tempo sequencial foi 377.08% mais rápido que o paralelo.
+2025-06-06 23:19:07.864 | SUCCESS  | level_01.exercice_01:<module>:22 - 
+================================================================================
+🧵  EXERCÍCIO 1: CRAWLER DE APIS CONCORRENTE COM THREADING
+--------------------------------------------------------------------------------
+🔄  Simulando a coleta de dados de 10 endpoints de uma API pública
+================================================================================
+
+2025-06-06 23:19:08.298 | SUCCESS  | utils.log_decorator:wrapper:48 - Função requests_in_parallel executada com sucesso em 0.43 segundos
+2025-06-06 23:19:08.796 | SUCCESS  | utils.log_decorator:wrapper:48 - Função requests_in_sequential executada com sucesso em 0.50 segundos
+2025-06-06 23:19:08.796 | SUCCESS  | utils.compare_times:compare_execution_times:23 - Execução concluída com sucesso! O tempo paralelo foi 12.51% mais rápido que o sequencial.
+2025-06-06 23:19:08.798 | SUCCESS  | level_01.exercice_02:<module>:27 - 
+================================================================================
+📂  EXERCÍCIO 2: INGESTÃO DE MÚLTIPLOS ARQUIVOS CSV COM THREADPOOL EXECUTOR
+--------------------------------------------------------------------------------
+🧮  Leitura de 10 arquivos .csv pequenos com Pandas em paralelo
+================================================================================
+
+2025-06-06 23:19:08.905 | SUCCESS  | utils.log_decorator:wrapper:48 - Função sequential_read_csv executada com sucesso em 0.11 segundos
+2025-06-06 23:19:08.935 | SUCCESS  | utils.log_decorator:wrapper:48 - Função parallel_read_csv executada com sucesso em 0.03 segundos
+2025-06-06 23:19:08.936 | SUCCESS  | utils.compare_times:compare_execution_times:23 - Execução concluída com sucesso! O tempo paralelo foi 71.51% mais rápido que o sequencial.
+2025-06-06 23:19:08.938 | SUCCESS  | level_01.exercice_03:<module>:26 - 
+================================================================================
+⏱️  EXERCÍCIO 3: MONITORAMENTO DE TEMPO DE RESPOSTA COM MÚLTIPLAS THREADS
+--------------------------------------------------------------------------------
+🌐  Testa o tempo de resposta de diferentes URLs em paralelo
+📄  Salva os resultados em um arquivo CSV
+================================================================================
+
+2025-06-06 23:19:09.904 | SUCCESS  | utils.log_decorator:wrapper:48 - Função check_urls_parallel executada com sucesso em 0.97 segundos
+2025-06-06 23:19:20.344 | ERROR    | level_01.exercice_03:check_url_response_time:65 - Erro ao acessar URL https://www.microsoft.com: The read operation timed out
+2025-06-06 23:19:21.973 | SUCCESS  | utils.log_decorator:wrapper:48 - Função check_urls_sequential executada com sucesso em 12.07 segundos
+2025-06-06 23:19:21.974 | SUCCESS  | utils.compare_times:compare_execution_times:23 - Execução concluída com sucesso! O tempo paralelo foi 91.99% mais rápido que o sequencial.
+2025-06-06 23:19:21.977 | SUCCESS  | level_01.exercice_04:<module>:21 - 
+================================================================================
+⬇️  EXERCÍCIO 4: DOWNLOAD CONCORRENTE DE ARQUIVOS (SIMULADO)
+--------------------------------------------------------------------------------
+⏳  Simula o download paralelo de 10 arquivos grandes com time.sleep()
+⚙️  Utiliza ThreadPoolExecutor para execução concorrente e ganho de performance
+================================================================================
+
+2025-06-06 23:19:22.978 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 1 concluído com sucesso!
+2025-06-06 23:19:23.979 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 2 concluído com sucesso!
+2025-06-06 23:19:24.981 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 3 concluído com sucesso!
+2025-06-06 23:19:25.982 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 4 concluído com sucesso!
+2025-06-06 23:19:26.984 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 5 concluído com sucesso!
+2025-06-06 23:19:27.985 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 6 concluído com sucesso!
+2025-06-06 23:19:28.988 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 7 concluído com sucesso!
+2025-06-06 23:19:29.988 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 8 concluído com sucesso!
+2025-06-06 23:19:30.989 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 9 concluído com sucesso!
+2025-06-06 23:19:33.008 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 10 concluído com sucesso!
+2025-06-06 23:19:33.008 | SUCCESS  | utils.log_decorator:wrapper:48 - Função sequential_download executada com sucesso em 11.03 segundos
+2025-06-06 23:19:34.009 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 1 concluído com sucesso!
+2025-06-06 23:19:34.010 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 2 concluído com sucesso!
+2025-06-06 23:19:34.010 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 3 concluído com sucesso!
+2025-06-06 23:19:34.011 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 4 concluído com sucesso!
+2025-06-06 23:19:34.012 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 5 concluído com sucesso!
+2025-06-06 23:19:34.013 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 7 concluído com sucesso!
+2025-06-06 23:19:34.013 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 6 concluído com sucesso!
+2025-06-06 23:19:34.013 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 8 concluído com sucesso!
+2025-06-06 23:19:34.014 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 10 concluído com sucesso!
+2025-06-06 23:19:34.014 | SUCCESS  | level_01.exercice_04:simulate_download_time:30 - Download do arquivo 9 concluído com sucesso!
+2025-06-06 23:19:34.017 | SUCCESS  | utils.log_decorator:wrapper:48 - Função parallel_download executada com sucesso em 1.01 segundos
+2025-06-06 23:19:34.017 | SUCCESS  | utils.compare_times:compare_execution_times:23 - Execução concluída com sucesso! O tempo paralelo foi 90.86% mais rápido que o sequencial.
+2025-06-06 23:19:34.019 | SUCCESS  | level_01.exercice_05:<module>:28 - 
+================================================================================
+🗄️  EXERCÍCIO 5: CONSULTA A MÚLTIPLAS BASES DE DADOS (SIMULADA)
+--------------------------------------------------------------------------------
+🔗  Simula 5 conexões independentes a bancos de dados usando threading
+📊  Cada thread lê uma "tabela" simulada e imprime um resumo dos dados
+================================================================================
+
+2025-06-06 23:19:35.143 | SUCCESS  | utils.log_decorator:wrapper:48 - Função query_parallel executada com sucesso em 1.12 segundos
+2025-06-06 23:19:35.275 | SUCCESS  | utils.log_decorator:wrapper:48 - Função query_sequencial executada com sucesso em 0.13 segundos
+2025-06-06 23:19:35.276 | SUCCESS  | utils.compare_times:compare_execution_times:18 - Execução concluída com sucesso! O tempo sequencial foi 752.31% mais rápido que o paralelo.
+2025-06-06 23:19:40.498 | SUCCESS  | utils.compare_times:compare_execution_times:18 - Execução concluída com sucesso! O tempo sequencial foi 221.63% mais rápido que o paralelo.
+2025-06-06 23:19:40.502 | SUCCESS  | level_02.exercice_07:<module>:25 - 
+================================================================================
+⚙️  Paralelizar aplicação de funções complexas em DataFrames
+--------------------------------------------------------------------------------
+🚀  Divida um DataFrame em 4 partes e use ProcessPoolExecutor para aplicar uma
+função de transformação em cada parte.
+================================================================================
+
+2025-06-06 23:19:42.537 | SUCCESS  | utils.compare_times:compare_execution_times:18 - Execução concluída com sucesso! O tempo sequencial foi 2.98% mais rápido que o paralelo.
+2025-06-06 23:19:42.539 | SUCCESS  | level_02.exercice_08:<module>:25 - 
+================================================================================
+🔄  Conversão paralela de arquivos Parquet → CSV
+--------------------------------------------------------------------------------
+🚀  Simule a conversão de 10 arquivos .parquet para .csv, onde cada processo lida
+com um arquivo diferente.
+================================================================================
+
+2025-06-06 23:19:42.678 | SUCCESS  | utils.compare_times:compare_execution_times:18 - Execução concluída com sucesso! O tempo sequencial foi 67.23% mais rápido que o paralelo.
+2025-06-06 23:19:44.245 | SUCCESS  | utils.compare_times:compare_execution_times:18 - Execução concluída com sucesso! O tempo sequencial foi 41.63% mais rápido que o paralelo.
+2025-06-06 23:19:45.546 | SUCCESS  | utils.compare_times:compare_execution_times:18 - Execução concluída com sucesso! O tempo sequencial foi 4.97% mais rápido que o paralelo.
+2025-06-06 23:19:45.565 | SUCCESS  | level_03.exercice_11:<module>:33 - 
+================================================================================
+🔄  EXERCÍCIO: ETL PARALELA POR PARTIÇÃO DE DADOS (ARQUIVOS CSV)
+--------------------------------------------------------------------------------
+📂  Cada arquivo CSV é tratado como uma partição (ex: mês)
+🧰  Processamento simulado e saída salva em Parquet
+================================================================================
+
+2025-06-06 23:19:45.620 | SUCCESS  | utils.log_decorator:wrapper:48 - Função etl_sequential executada com sucesso em 0.05 segundos
+2025-06-06 23:19:45.683 | SUCCESS  | utils.log_decorator:wrapper:48 - Função etl_parallel executada com sucesso em 0.06 segundos
+2025-06-06 23:19:45.683 | SUCCESS  | utils.compare_times:compare_execution_times:18 - Execução concluída com sucesso! O tempo sequencial foi 13.31% mais rápido que o paralelo.
+2025-06-06 23:19:45.686 | SUCCESS  | level_03.exercice_12:<module>:25 - 
+================================================================================
+🌐  EXERCÍCIO: EXTRAÇÃO CONCORRENTE DE API PAGINADA
+--------------------------------------------------------------------------------
+🔄  Consulta uma API paginada usando múltiplas threads
+📊  Junta todos os dados em uma única estrutura de saída
+================================================================================
+
+2025-06-06 23:19:45.699 | SUCCESS  | utils.log_decorator:wrapper:48 - Função fetch_all_sales_sequential executada com sucesso em 0.01 segundos
+2025-06-06 23:19:45.705 | SUCCESS  | utils.log_decorator:wrapper:48 - Função fetch_all_sales_concurrent executada com sucesso em 0.00 segundos
+2025-06-06 23:19:45.706 | SUCCESS  | utils.compare_times:compare_execution_times:23 - Execução concluída com sucesso! O tempo paralelo foi 59.30% mais rápido que o sequencial.
+2025-06-06 23:19:45.719 | SUCCESS  | level_03.exercice_13:<module>:25 - 
+================================================================================
+🚀  EXERCÍCIO 13: Simulação de múltiplos produtores (leitura) e consumidores (escrita)
+--------------------------------------------------------------------------------
+🔄  Simulando múltiplos produtores e consumidores com batch async e multi-process
+================================================================================
+
+2025-06-06 23:19:45.720 | SUCCESS  | utils.log_decorator:wrapper:48 - Função run_asyncio executada com sucesso em 0.00 segundos
+2025-06-06 23:19:46.207 | SUCCESS  | level_03.exercice_14:<module>:26 - 
+================================================================================
+🚀  EXERCÍCIO 14: BENCHMARKING SERIAL VS PARALELO
+--------------------------------------------------------------------------------
+⏱️  Comparando tempo de execução de uma pipeline de 3 estágios:
+    - Ingestão de arquivos
+    - Transformação de dados
+    - Escrita em parquet
+================================================================================
+
+2025-06-06 23:19:46.237 | SUCCESS  | utils.log_decorator:wrapper:48 - Função run_pipeline_sequential executada com sucesso em 0.03 segundos
+2025-06-06 23:19:46.467 | SUCCESS  | utils.log_decorator:wrapper:48 - Função run_pipeline_parallel executada com sucesso em 0.23 segundos
+2025-06-06 23:19:46.469 | SUCCESS  | utils.compare_times:compare_execution_times:18 - Execução concluída com sucesso! O tempo sequencial foi 691.80% mais rápido que o paralelo.
+2025-06-06 23:19:46.511 | SUCCESS  | utils.log_decorator:wrapper:48 - Função analyze_log_file executada com sucesso em 0.00 segundos
+2025-06-06 23:19:46.512 | SUCCESS  | utils.log_decorator:wrapper:48 - Função analyze_log_file executada com sucesso em 0.00 segundos
+2025-06-06 23:19:46.512 | SUCCESS  | utils.log_decorator:wrapper:48 - Função analyze_log_file executada com sucesso em 0.00 segundos
+2025-06-06 23:19:46.514 | SUCCESS  | utils.log_decorator:wrapper:48 - Função analyze_log_file executada com sucesso em 0.00 segundos
+2025-06-06 23:19:46.521 | SUCCESS  | utils.log_decorator:wrapper:48 - Função analyze_log_file executada com sucesso em 0.00 segundos
+2025-06-06 23:19:46.522 | SUCCESS  | utils.log_decorator:wrapper:48 - Função analyze_log_file executada com sucesso em 0.00 segundos
+2025-06-06 23:19:46.522 | SUCCESS  | utils.log_decorator:wrapper:48 - Função analyze_log_file executada com sucesso em 0.00 segundos
+2025-06-06 23:19:46.523 | SUCCESS  | utils.log_decorator:wrapper:48 - Função analyze_log_file executada com sucesso em 0.00 segundos
+2025-06-06 23:19:46.524 | SUCCESS  | utils.compare_times:compare_execution_times:18 - Execução concluída com sucesso! O tempo sequencial foi 734.42% mais rápido que o paralelo.

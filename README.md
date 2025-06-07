@@ -154,7 +154,7 @@ Executa o isort e black para manter o código limpo e padronizado.
 ---
 
 ### 🌐 API Simulada  
-Durante a execução, uma API FastAPI é iniciada localmente na porta 8000, simulando endpoints para exercícios com chamadas HTTP concorrentes.
+Durante a execução, uma API FastAPI é iniciada localmente na porta 8574, simulando endpoints para exercícios com chamadas HTTP concorrentes.
 
 ---
 

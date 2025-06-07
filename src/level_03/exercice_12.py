@@ -111,7 +111,7 @@ def fetch_all_sales_concurrent(
 
 
 def main():
-    base_url = "http://localhost:8000/sales/"
+    base_url = "http://localhost:8574/sales/"
     year = 2024
     month = 6
     per_page = 100

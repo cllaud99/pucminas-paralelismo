@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "pucminas-paralelismo"
+version = "0.1.0"
+description = "Trabalho de paralelismo da disciplina de Fundamentos de Python para Engenharia de Dados da PUC Minas"
+authors = ["Claudio Pontes <claudiohpontes@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+requests = "^2.32.3"
+python-dotenv = "^1.1.0"
+taskipy = "^1.14.1"
+loguru = "^0.7.3"
+pandas = "^2.2.3"
+pyarrow = "^20.0.0"
+faker = "^37.3.0"
+fastapi = "^0.115.12"
+uvicorn = "^0.34.3"
+aiomultiprocess = "^0.9.1"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+isort = "^6.0.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.taskipy.tasks]
+format = """
+isort .
+black .
+"""

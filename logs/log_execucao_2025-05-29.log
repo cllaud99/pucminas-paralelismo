@@ -1,0 +1,82 @@
+
+2025-05-29 21:00:35.693 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_sequential executada com sucesso em 0.37 segundos
+2025-05-29 21:00:36.775 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_parallel executada com sucesso em 1.08 segundos
+2025-05-29 21:01:20.990 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_sequential executada com sucesso em 2.55 segundos
+2025-05-29 21:01:21.046 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_parallel executada com sucesso em 0.06 segundos
+2025-05-29 21:02:17.714 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_sequential executada com sucesso em 0.43 segundos
+2025-05-29 21:02:17.782 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_parallel executada com sucesso em 0.06 segundos
+2025-05-29 21:04:42.119 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_sequential executada com sucesso em 2.35 segundos
+2025-05-29 21:04:42.234 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_parallel executada com sucesso em 0.11 segundos
+2025-05-29 21:04:42.238 | SUCCESS  | __main__:<module>:70 - Execução concluida com sucesso! para o exercicio 01 o tempo sequencial foi maior que o paralelo em 95.18
+2025-05-29 21:05:23.652 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_sequential executada com sucesso em 0.32 segundos
+2025-05-29 21:05:23.737 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_parallel executada com sucesso em 0.08 segundos
+2025-05-29 21:05:23.740 | SUCCESS  | __main__:<module>:73 - Execução concluída com sucesso! O tempo paralelo foi 73.68% mais rápido que o sequencial.
+2025-05-29 21:06:09.162 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_sequential executada com sucesso em 0.33 segundos
+2025-05-29 21:06:09.223 | SUCCESS  | utils.log_decorator:wrapper:49 - Função simulate_requests_in_parallel executada com sucesso em 0.06 segundos
+2025-05-29 21:06:09.225 | SUCCESS  | __main__:main:73 - Execução concluída com sucesso! O tempo paralelo foi 82.07% mais rápido que o sequencial.
+2025-05-29 21:17:22.046 | SUCCESS  | utils.log_decorator:wrapper:49 - Função requests_in_sequential executada com sucesso em 2.50 segundos
+2025-05-29 21:17:22.097 | SUCCESS  | utils.log_decorator:wrapper:49 - Função requests_in_parallel executada com sucesso em 0.05 segundos
+2025-05-29 21:17:22.098 | SUCCESS  | __main__:main:79 - Execução concluída com sucesso! O tempo paralelo foi 97.99% mais rápido que o sequencial.
+2025-05-29 21:25:55.178 | SUCCESS  | utils.log_decorator:wrapper:49 - Função requests_in_sequential executada com sucesso em 2.32 segundos
+2025-05-29 21:25:56.244 | SUCCESS  | utils.log_decorator:wrapper:49 - Função requests_in_parallel executada com sucesso em 1.06 segundos
+2025-05-29 21:25:56.244 | SUCCESS  | utils.compare_times:compare_execution_times:20 - Execução concluída com sucesso! O tempo paralelo foi 54.22% mais rápido que o sequencial.
+2025-05-29 21:26:02.266 | SUCCESS  | utils.log_decorator:wrapper:49 - Função requests_in_sequential executada com sucesso em 0.37 segundos
+2025-05-29 21:26:02.311 | SUCCESS  | utils.log_decorator:wrapper:49 - Função requests_in_parallel executada com sucesso em 0.04 segundos
+2025-05-29 21:26:02.312 | SUCCESS  | utils.compare_times:compare_execution_times:20 - Execução concluída com sucesso! O tempo paralelo foi 88.03% mais rápido que o sequencial.
+2025-05-29 21:26:07.433 | SUCCESS  | utils.log_decorator:wrapper:49 - Função requests_in_sequential executada com sucesso em 0.41 segundos
+2025-05-29 21:26:07.525 | SUCCESS  | utils.log_decorator:wrapper:49 - Função requests_in_parallel executada com sucesso em 0.09 segundos
+2025-05-29 21:26:07.525 | SUCCESS  | utils.compare_times:compare_execution_times:20 - Execução concluída com sucesso! O tempo paralelo foi 77.58% mais rápido que o sequencial.
+2025-05-29 21:26:30.179 | SUCCESS  | utils.log_decorator:wrapper:49 - Função requests_in_parallel executada com sucesso em 0.10 segundos
+2025-05-29 21:26:30.573 | SUCCESS  | utils.log_decorator:wrapper:49 - Função requests_in_sequential executada com sucesso em 0.39 segundos
+2025-05-29 21:26:30.573 | SUCCESS  | utils.compare_times:compare_execution_times:20 - Execução concluída com sucesso! O tempo paralelo foi 74.84% mais rápido que o sequencial.
+2025-05-29 21:31:38.765 | SUCCESS  | utils.log_decorator:wrapper:49 - Função sequential_read_csv executada com sucesso em 0.23 segundos
+2025-05-29 21:31:38.867 | SUCCESS  | utils.log_decorator:wrapper:49 - Função parallel_read_csv executada com sucesso em 0.10 segundos
+2025-05-29 21:31:38.867 | SUCCESS  | utils.compare_times:compare_execution_times:20 - Execução concluída com sucesso! O tempo paralelo foi 56.90% mais rápido que o sequencial.
+2025-05-29 21:32:50.291 | SUCCESS  | utils.log_decorator:wrapper:49 - Função sequential_read_csv executada com sucesso em 0.24 segundos
+2025-05-29 21:32:50.392 | SUCCESS  | utils.log_decorator:wrapper:49 - Função parallel_read_csv executada com sucesso em 0.10 segundos
+2025-05-29 21:32:50.393 | SUCCESS  | utils.compare_times:compare_execution_times:20 - Execução concluída com sucesso! O tempo paralelo foi 58.73% mais rápido que o sequencial.
+2025-05-29 21:40:40.170 | SUCCESS  | __main__:simulate_download_time:24 - Download do arquivo 1 concluído com sucesso!
+2025-05-29 21:40:40.171 | SUCCESS  | __main__:simulate_download_time:24 - Download do arquivo 4 concluído com sucesso!
+2025-05-29 21:40:40.172 | SUCCESS  | __main__:simulate_download_time:24 - Download do arquivo 3 concluído com sucesso!
+2025-05-29 21:40:40.172 | SUCCESS  | __main__:simulate_download_time:24 - Download do arquivo 2 concluído com sucesso!
+2025-05-29 21:40:40.172 | SUCCESS  | __main__:simulate_download_time:24 - Download do arquivo 5 concluído com sucesso!
+2025-05-29 21:40:50.171 | SUCCESS  | __main__:simulate_download_time:24 - Download do arquivo 6 concluído com sucesso!
+2025-05-29 21:40:50.172 | SUCCESS  | __main__:simulate_download_time:24 - Download do arquivo 7 concluído com sucesso!
+2025-05-29 21:40:50.174 | SUCCESS  | __main__:simulate_download_time:24 - Download do arquivo 8 concluído com sucesso!
+2025-05-29 21:40:50.177 | SUCCESS  | __main__:simulate_download_time:24 - Download do arquivo 9 concluído com sucesso!
+2025-05-29 21:40:50.177 | SUCCESS  | __main__:simulate_download_time:24 - Download do arquivo 10 concluído com sucesso!
+2025-05-29 21:40:50.188 | SUCCESS  | utils.log_decorator:wrapper:49 - Função concurrent_download executada com sucesso em 19.08 segundos
+2025-05-29 21:41:46.071 | SUCCESS  | __main__:simulate_download_time:18 - Download do arquivo 1 concluído com sucesso!
+2025-05-29 21:41:46.071 | SUCCESS  | __main__:simulate_download_time:18 - Download do arquivo 2 concluído com sucesso!
+2025-05-29 21:41:46.072 | SUCCESS  | __main__:simulate_download_time:18 - Download do arquivo 5 concluído com sucesso!
+2025-05-29 21:41:46.073 | SUCCESS  | __main__:simulate_download_time:18 - Download do arquivo 3 concluído com sucesso!
+2025-05-29 21:41:46.074 | SUCCESS  | __main__:simulate_download_time:18 - Download do arquivo 6 concluído com sucesso!
+2025-05-29 21:41:46.074 | SUCCESS  | __main__:simulate_download_time:18 - Download do arquivo 4 concluído com sucesso!
+2025-05-29 21:41:46.075 | SUCCESS  | __main__:simulate_download_time:18 - Download do arquivo 7 concluído com sucesso!
+2025-05-29 21:41:46.075 | SUCCESS  | __main__:simulate_download_time:18 - Download do arquivo 9 concluído com sucesso!
+2025-05-29 21:41:46.076 | SUCCESS  | __main__:simulate_download_time:18 - Download do arquivo 10 concluído com sucesso!
+2025-05-29 21:41:46.080 | SUCCESS  | __main__:simulate_download_time:18 - Download do arquivo 8 concluído com sucesso!
+2025-05-29 21:41:46.086 | SUCCESS  | utils.log_decorator:wrapper:49 - Função concurrent_download executada com sucesso em 5.02 segundos
+2025-05-29 21:43:44.581 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 1 concluído com sucesso!
+2025-05-29 21:43:49.584 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 2 concluído com sucesso!
+2025-05-29 21:43:54.585 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 3 concluído com sucesso!
+2025-05-29 21:43:59.586 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 4 concluído com sucesso!
+2025-05-29 21:44:04.589 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 5 concluído com sucesso!
+2025-05-29 21:44:09.590 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 6 concluído com sucesso!
+2025-05-29 21:44:13.641 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 7 concluído com sucesso!
+2025-05-29 21:44:18.642 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 8 concluído com sucesso!
+2025-05-29 21:44:23.643 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 9 concluído com sucesso!
+2025-05-29 21:44:28.645 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 10 concluído com sucesso!
+2025-05-29 21:44:28.645 | SUCCESS  | utils.log_decorator:wrapper:49 - Função sequential_download executada com sucesso em 48.11 segundos
+2025-05-29 21:44:33.650 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 1 concluído com sucesso!
+2025-05-29 21:44:33.652 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 2 concluído com sucesso!
+2025-05-29 21:44:33.653 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 4 concluído com sucesso!
+2025-05-29 21:44:33.655 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 3 concluído com sucesso!
+2025-05-29 21:44:33.656 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 5 concluído com sucesso!
+2025-05-29 21:44:33.657 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 7 concluído com sucesso!
+2025-05-29 21:44:33.658 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 6 concluído com sucesso!
+2025-05-29 21:44:33.663 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 8 concluído com sucesso!
+2025-05-29 21:44:33.665 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 9 concluído com sucesso!
+2025-05-29 21:44:33.665 | SUCCESS  | __main__:simulate_download_time:19 - Download do arquivo 10 concluído com sucesso!
+2025-05-29 21:44:33.667 | SUCCESS  | utils.log_decorator:wrapper:49 - Função parallel_download executada com sucesso em 5.02 segundos
+2025-05-29 21:44:33.668 | SUCCESS  | utils.compare_times:compare_execution_times:20 - Execução concluída com sucesso! O tempo paralelo foi 89.56% mais rápido que o sequencial.

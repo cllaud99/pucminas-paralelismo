@@ -1,19 +1,18 @@
+import csv
 import os
 import sys
-import time
 import threading
-import csv
-
+import time
 from datetime import datetime
-from urllib.request import urlopen
 from urllib.error import URLError
+from urllib.request import urlopen
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )
 
-from utils.log_decorator import log_execution, logger
 from utils.compare_times import compare_execution_times
+from utils.log_decorator import log_execution, logger
 
 banner_exercicio_3 = """
 ================================================================================
@@ -39,7 +38,7 @@ urls = [
     "https://www.linkedin.com",
     "https://www.facebook.com",
     "https://www.twitter.com",
-    "https://www.instagram.com"
+    "https://www.instagram.com",
 ]
 
 
@@ -113,7 +112,6 @@ def save_results_to_csv():
     os.makedirs(folder_path, exist_ok=True)
     file_name = f"resultados_urls_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
     output_path = os.path.join(folder_path, file_name)
-
 
     with open(output_path, "w", newline="", encoding="utf-8") as csvfile:
         fieldnames = ["url", "tempo_resposta", "status"]

@@ -1,10 +1,11 @@
-from fastapi import FastAPI, Query
-from typing import List
-from pydantic import BaseModel
-from functools import lru_cache
 import os
 import sys
+from functools import lru_cache
+from typing import List
+
 import pandas as pd
+from fastapi import FastAPI, Query
+from pydantic import BaseModel
 
 # Ajuste do path para importar seu módulo local (ajuste conforme seu projeto)
 
@@ -45,7 +46,7 @@ async def get_sales(
     year: int = Query(2024, ge=2000),
     month: int = Query(1, ge=1, le=12),
     per_page: int = Query(10, ge=1, le=100),
-    page: int = Query(1, ge=1)
+    page: int = Query(1, ge=1),
 ):
     """
     Retorna dados de vendas paginados para um mês e ano específicos.
@@ -77,5 +78,5 @@ async def get_sales(
         per_page=per_page,
         total_records=len(all_data_df),
         total_pages=total_pages,
-        data=data
+        data=data,
     )

@@ -1,10 +1,10 @@
 import os
 import sys
 import time
-import pandas as pd
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from typing import Callable, List
 
+import pandas as pd
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
@@ -97,7 +97,9 @@ def apply_in_parallel(
     return total_time
 
 
-def apply_sequentially(df: pd.DataFrame, func: Callable[[pd.DataFrame], pd.DataFrame]) -> float:
+def apply_sequentially(
+    df: pd.DataFrame, func: Callable[[pd.DataFrame], pd.DataFrame]
+) -> float:
     """
     Aplica uma função complexa sequencialmente no DataFrame inteiro.
 
@@ -116,10 +118,7 @@ def apply_sequentially(df: pd.DataFrame, func: Callable[[pd.DataFrame], pd.DataF
 
 
 def main() -> None:
-    df = pd.DataFrame({
-        "A": range(1000),
-        "B": range(1000, 2000)
-    })
+    df = pd.DataFrame({"A": range(1000), "B": range(1000, 2000)})
 
     parallel_time = apply_in_parallel(df, complex_function)
     sequential_time = apply_sequentially(df, complex_function)

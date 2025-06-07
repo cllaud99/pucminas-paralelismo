@@ -3,12 +3,11 @@ import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )
-from utils.log_decorator import log_execution, logger
 from utils.compare_times import compare_execution_times
+from utils.log_decorator import log_execution, logger
 
 banner_exercicio_4 = """
 ================================================================================
@@ -20,6 +19,7 @@ banner_exercicio_4 = """
 """
 
 logger.success(banner_exercicio_4)
+
 
 def simulate_download_time(file_id: int):
     """
@@ -35,7 +35,7 @@ def simulate_download_time(file_id: int):
 def sequential_download():
     """
     Simula o download sequencial de 10 arquivos grandes.
-    
+
     Returns:
         list: Lista de mensagens de conclusão de cada download.
     """
@@ -53,7 +53,7 @@ def sequential_download():
 def parallel_download():
     """
     Simula o download concorrente de 10 arquivos grandes usando ThreadPoolExecutor.
-    
+
     Returns:
         list: Lista de mensagens de conclusão de cada download.
     """
@@ -71,6 +71,7 @@ def parallel_download():
     end_time = time.time()
     final_time = end_time - start_time
     return final_time
+
 
 def main():
     sequential_time = sequential_download()

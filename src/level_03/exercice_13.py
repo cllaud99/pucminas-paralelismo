@@ -1,17 +1,18 @@
+import asyncio
 import os
+import random
 import sys
 import time
-import random
-import asyncio
 from typing import Any, Dict, List
+
 from aiomultiprocess import Pool
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )
 
-from utils.log_decorator import log_execution, logger
 from utils.compare_times import compare_execution_times
+from utils.log_decorator import log_execution, logger
 
 banner = """
 ================================================================================
@@ -127,8 +128,7 @@ async def run_asyncio(
         for pid in range(num_producers)
     ]
     consumers = [
-        asyncio.create_task(consume_data(queue, cid))
-        for cid in range(num_consumers)
+        asyncio.create_task(consume_data(queue, cid)) for cid in range(num_consumers)
     ]
 
     await asyncio.gather(*producers)
@@ -144,7 +144,9 @@ async def run_asyncio(
 
 def main() -> None:
     logger.info("Executando versão asyncio + aiomultiprocess...")
-    async_time = asyncio.run(run_asyncio(num_producers=9, num_consumers=9, num_items=10))
+    async_time = asyncio.run(
+        run_asyncio(num_producers=9, num_consumers=9, num_items=10)
+    )
     logger.info(f"Tempo asyncio: {async_time:.3f}s")
 
 

@@ -1,8 +1,9 @@
 import importlib
 import os
 import sys
-from typing import List
 import threading
+from typing import List
+
 import uvicorn
 
 
@@ -18,19 +19,20 @@ def run_setup() -> None:
         print(f"Erro ao executar o setup faker_create_datasets: {e}")
         raise  # se quiser interromper aqui caso o setup falhe
 
+
 def run_api():
     """
     Roda a API FastAPI em uma thread separada para não bloquear o fluxo.
     """
     api_module = importlib.import_module("utils.simulated_api")
     app = getattr(api_module, "app")  # Assume que a FastAPI está exposta como "app"
-    
+
     def start_uvicorn():
         uvicorn.run(app, host="127.0.0.1", port=8000, log_level="info")
 
     thread = threading.Thread(target=start_uvicorn, daemon=True)
     thread.start()
-    print("API FastAPI rodando em background na porta 8000")    
+    print("API FastAPI rodando em background na porta 8000")
 
 
 def run_exercises(base_path: str, levels: List[str]) -> None:
@@ -46,13 +48,17 @@ def run_exercises(base_path: str, levels: List[str]) -> None:
         if not os.path.isdir(level_path):
             print(f"Pasta {level_path} não encontrada, pulando...")
             continue
-        
+
         # Lista arquivos exercício
-        files = [f for f in os.listdir(level_path) if f.startswith("exercice_") and f.endswith(".py")]
+        files = [
+            f
+            for f in os.listdir(level_path)
+            if f.startswith("exercice_") and f.endswith(".py")
+        ]
         files.sort()  # garante ordem numérica
 
         for file in files:
-            module_name = file[:-3] 
+            module_name = file[:-3]
             full_module = f"{level}.{module_name}"
             try:
                 module = importlib.import_module(full_module)
@@ -60,6 +66,7 @@ def run_exercises(base_path: str, levels: List[str]) -> None:
                 module.main()
             except Exception as e:
                 print(f"Erro ao executar {full_module}: {e}")
+
 
 if __name__ == "__main__":
     base_dir = os.path.dirname(os.path.abspath(__file__))

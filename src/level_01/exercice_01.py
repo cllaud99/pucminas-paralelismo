@@ -1,16 +1,15 @@
 import os
 import sys
-import time
 import threading
+import time
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )
 
 from apis import weather_api
-from utils.log_decorator import log_execution, logger
 from utils.compare_times import compare_execution_times
-
+from utils.log_decorator import log_execution, logger
 
 banner_exercicio_1 = """
 ================================================================================
@@ -36,6 +35,7 @@ cities = [
     "Florianopolis",
 ]
 
+
 @log_execution
 def requests_in_sequential():
     """
@@ -48,8 +48,9 @@ def requests_in_sequential():
     end_time = time.time()
 
     final_time = end_time - start_time
-    logger.info(f"Tempo de execução: {final_time} segundos")  
+    logger.info(f"Tempo de execução: {final_time} segundos")
     return final_time
+
 
 @log_execution
 def requests_in_parallel():
@@ -76,6 +77,7 @@ def main():
     parallel_time = requests_in_parallel()
     sequential_time = requests_in_sequential()
     compare_execution_times(sequential_time, parallel_time)
+
 
 if __name__ == "__main__":
     main()

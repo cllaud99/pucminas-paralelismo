@@ -1,8 +1,8 @@
 import os
 import sys
 import time
-from typing import List, Dict
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from typing import Dict, List
 
 import requests
 
@@ -10,9 +10,8 @@ sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )
 
-from utils.log_decorator import log_execution, logger
 from utils.compare_times import compare_execution_times
-
+from utils.log_decorator import log_execution, logger
 
 BANNER = """
 ================================================================================
@@ -47,7 +46,9 @@ def fetch_page(base_url: str, year: int, month: int, page: int, per_page: int) -
 
 
 @log_execution
-def fetch_all_sales_sequential(base_url: str, year: int, month: int, per_page: int = 10) -> List[Dict]:
+def fetch_all_sales_sequential(
+    base_url: str, year: int, month: int, per_page: int = 10
+) -> List[Dict]:
     """
     Consulta todas as páginas da API de forma sequencial.
 
@@ -72,7 +73,9 @@ def fetch_all_sales_sequential(base_url: str, year: int, month: int, per_page: i
 
 
 @log_execution
-def fetch_all_sales_concurrent(base_url: str, year: int, month: int, per_page: int = 10) -> List[Dict]:
+def fetch_all_sales_concurrent(
+    base_url: str, year: int, month: int, per_page: int = 10
+) -> List[Dict]:
     """
     Consulta todas as páginas da API de forma concorrente usando threads.
 

@@ -1,18 +1,19 @@
+import multiprocessing
 import os
 import sys
 import time
-import multiprocessing
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )
 
-from utils.log_decorator import log_execution, logger
 from utils.compare_times import compare_execution_times
+from utils.log_decorator import log_execution, logger
 
 LOGS_DIR = "logs"
 
 pattern = "error"
+
 
 @log_execution
 def analyze_log_file(file_path: str) -> int:
@@ -33,7 +34,9 @@ def analyze_log_file(file_path: str) -> int:
     logger.info(f"{os.path.basename(file_path)} - Encontrados {count} erros críticos.")
     return count
 
+
 import time
+
 
 def analyze_logs_sequential(log_files: list[str]) -> float:
     """
@@ -51,6 +54,7 @@ def analyze_logs_sequential(log_files: list[str]) -> float:
     end_time = time.time()
 
     return end_time - start_time
+
 
 def analyze_logs_parallel(log_files: list[str]) -> float:
     """
@@ -71,13 +75,16 @@ def analyze_logs_parallel(log_files: list[str]) -> float:
 
 
 def main():
-    log_files = [os.path.join(LOGS_DIR, f) for f in os.listdir(LOGS_DIR) if f.endswith(".log")]
+    log_files = [
+        os.path.join(LOGS_DIR, f) for f in os.listdir(LOGS_DIR) if f.endswith(".log")
+    ]
     logger.info(f"Arquivos de log para análise: {log_files}")
 
     time_parallel = analyze_logs_parallel(log_files)
     time_sequential = analyze_logs_sequential(log_files)
-    
+
     compare_execution_times(time_sequential, time_parallel)
+
 
 if __name__ == "__main__":
     main()

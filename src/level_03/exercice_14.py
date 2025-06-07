@@ -1,16 +1,16 @@
 import os
 import sys
-import time
 import threading
+import time
+
 import pandas as pd
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )
 
-from utils.log_decorator import logger, log_execution
 from utils.compare_times import compare_execution_times
-
+from utils.log_decorator import log_execution, logger
 
 banner_exercicio_14 = """
 ================================================================================
@@ -48,7 +48,7 @@ def transform_data(
     df: pd.DataFrame,
     discount_threshold: int = 10,
     discount_rate: float = 0.10,
-    apply_month_name: bool = True
+    apply_month_name: bool = True,
 ) -> pd.DataFrame:
     """
     Transforma o DataFrame aplicando regras de negócio:
@@ -136,7 +136,7 @@ def run_pipeline_parallel(input_dir: str, output_path: str) -> float:
     threads = [
         threading.Thread(target=ingest),
         threading.Thread(target=transform),
-        threading.Thread(target=save)
+        threading.Thread(target=save),
     ]
 
     for thread in threads:

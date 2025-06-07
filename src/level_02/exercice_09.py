@@ -1,11 +1,12 @@
 import os
+import string
 import sys
 import time
-import string
-import numpy as np
-import pandas as pd
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from typing import List, Tuple
+
+import numpy as np
+import pandas as pd
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
@@ -40,10 +41,7 @@ def generate_synthetic_data(n_rows: int = 10_000_000) -> pd.DataFrame:
     group_labels = np.random.choice(list(string.ascii_uppercase[:5]), size=n_rows)
     values = np.random.rand(n_rows) * 100
 
-    df = pd.DataFrame({
-        "group": group_labels,
-        "value": values
-    })
+    df = pd.DataFrame({"group": group_labels, "value": values})
     return df
 
 
@@ -73,11 +71,15 @@ def split_dataframe(df: pd.DataFrame, n_parts: int) -> List[pd.DataFrame]:
     """
     total_length = len(df)
     part_size = total_length // n_parts
-    return [df.iloc[i * part_size: None if i == n_parts - 1 else (i + 1) * part_size]
-            for i in range(n_parts)]
+    return [
+        df.iloc[i * part_size : None if i == n_parts - 1 else (i + 1) * part_size]
+        for i in range(n_parts)
+    ]
 
 
-def apply_aggregation_parallel(df: pd.DataFrame, n_workers: int = 4) -> Tuple[pd.DataFrame, float]:
+def apply_aggregation_parallel(
+    df: pd.DataFrame, n_workers: int = 4
+) -> Tuple[pd.DataFrame, float]:
     """
     Aplica agregações pesadas em paralelo sobre o DataFrame.
 
@@ -98,11 +100,18 @@ def apply_aggregation_parallel(df: pd.DataFrame, n_workers: int = 4) -> Tuple[pd
         for future in as_completed(futures):
             results.append(future.result())
 
-    df_result = pd.concat(results).groupby("group").agg({
-        "sum": "sum",
-        "mean": "mean",
-        "std": "mean"  # média dos desvios padrão por grupo
-    }).reset_index()
+    df_result = (
+        pd.concat(results)
+        .groupby("group")
+        .agg(
+            {
+                "sum": "sum",
+                "mean": "mean",
+                "std": "mean",  # média dos desvios padrão por grupo
+            }
+        )
+        .reset_index()
+    )
 
     end_time = time.time()
     return df_result, end_time - start_time

@@ -1,4 +1,5 @@
-from utils.log_decorator import  logger
+from utils.log_decorator import logger
+
 
 def compare_execution_times(sequential_time: int, parallel_time: int):
     """
@@ -8,7 +9,9 @@ def compare_execution_times(sequential_time: int, parallel_time: int):
     logger.info(f"Tempo de execução paralelo: {parallel_time:.2f} segundos")
 
     # Calcula a diferença percentual de tempo entre as execuções
-    time_difference_percentage = (sequential_time - parallel_time) / sequential_time * 100
+    time_difference_percentage = (
+        (sequential_time - parallel_time) / sequential_time * 100
+    )
     formatted_diff = f"{abs(time_difference_percentage):.2f}"
 
     if sequential_time < parallel_time:

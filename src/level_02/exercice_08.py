@@ -1,9 +1,10 @@
 import os
 import sys
 import time
-import pandas as pd
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from typing import List
+
+import pandas as pd
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
@@ -40,7 +41,9 @@ def convert_parquet_to_csv(parquet_path: str, csv_path: str) -> str:
     return csv_path
 
 
-def parallel_conversion(parquet_files: List[str], output_dir: str, n_workers: int = 4) -> float:
+def parallel_conversion(
+    parquet_files: List[str], output_dir: str, n_workers: int = 4
+) -> float:
     """
     Converte múltiplos arquivos Parquet para CSV em paralelo.
 
@@ -60,7 +63,9 @@ def parallel_conversion(parquet_files: List[str], output_dir: str, n_workers: in
         for parquet_file in parquet_files:
             filename = os.path.splitext(os.path.basename(parquet_file))[0] + ".csv"
             csv_path = os.path.join(output_dir, filename)
-            futures.append(executor.submit(convert_parquet_to_csv, parquet_file, csv_path))
+            futures.append(
+                executor.submit(convert_parquet_to_csv, parquet_file, csv_path)
+            )
 
         for future in as_completed(futures):
             future.result()
@@ -94,15 +99,18 @@ def sequential_conversion(parquet_files: List[str], output_dir: str) -> float:
 
 def main() -> None:
     input_parquet_dir = "./data/inputs/simulated_datalake_files_parquet"
-    parquet_files = [os.path.join(input_parquet_dir, file) for file in os.listdir(input_parquet_dir)]
+    parquet_files = [
+        os.path.join(input_parquet_dir, file) for file in os.listdir(input_parquet_dir)
+    ]
 
     output_csv_dir_parallel = "./data/outputs/exercicio_08/output_csv_parallel"
     output_csv_dir_sequential = "./data/outputs/exercicio_08/output_csv_sequential"
     n_workers = 4
 
-
     logger.info("🚀 Convertendo arquivos Parquet para CSV em paralelo...")
-    parallel_time = parallel_conversion(parquet_files, output_csv_dir_parallel, n_workers=n_workers)
+    parallel_time = parallel_conversion(
+        parquet_files, output_csv_dir_parallel, n_workers=n_workers
+    )
 
     logger.info("🔁 Convertendo arquivos Parquet para CSV sequencialmente...")
     sequential_time = sequential_conversion(parquet_files, output_csv_dir_sequential)

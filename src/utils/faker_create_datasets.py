@@ -1,13 +1,17 @@
 import os
-import pandas as pd
-from faker import Faker
+import random
 import sqlite3
 from typing import List
-import random
+
+import pandas as pd
+from faker import Faker
 
 fake = Faker("pt_BR")
 
-def generate_sales_data_for_month(month: int, year: int, num_records: int = 100) -> pd.DataFrame:
+
+def generate_sales_data_for_month(
+    month: int, year: int, num_records: int = 100
+) -> pd.DataFrame:
     """
     Gera um DataFrame fake com dados de vendas para um mês específico.
 
@@ -28,13 +32,15 @@ def generate_sales_data_for_month(month: int, year: int, num_records: int = 100)
         price = round(random.uniform(10.0, 200.0), 2)
         total = round(quantity * price, 2)
 
-        records.append({
-            "date": date,
-            "product": product,
-            "quantity": quantity,
-            "price": price,
-            "total": total
-        })
+        records.append(
+            {
+                "date": date,
+                "product": product,
+                "quantity": quantity,
+                "price": price,
+                "total": total,
+            }
+        )
 
     return pd.DataFrame(records)
 
@@ -43,7 +49,7 @@ def save_monthly_sales_data(
     output_dir: str,
     year: int = 2024,
     num_records_per_month: int = 100,
-    file_format: str = "csv"
+    file_format: str = "csv",
 ) -> List[str]:
     """
     Gera e salva arquivos de dados de vendas para 12 meses no formato CSV ou Parquet.
@@ -106,10 +112,11 @@ def save_sales_data_to_sqlite(db_path: str, csv_files: List[str]) -> None:
             # Extrai nome do arquivo sem caminho e extensão para usar como nome da tabela
             table_name = os.path.splitext(os.path.basename(file))[0]
             # Substituir caracteres que não são válidos em nomes de tabelas (opcional)
-            table_name = table_name.replace('-', '_').replace(' ', '_')
+            table_name = table_name.replace("-", "_").replace(" ", "_")
 
             # Cria tabela para cada arquivo
-            cursor.execute(f"""
+            cursor.execute(
+                f"""
                 CREATE TABLE IF NOT EXISTS {table_name} (
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     date TEXT,
@@ -118,15 +125,19 @@ def save_sales_data_to_sqlite(db_path: str, csv_files: List[str]) -> None:
                     price REAL,
                     total REAL
                 )
-            """)
+            """
+            )
             conn.commit()
 
             df = pd.read_csv(file)
             records = df.to_records(index=False)
-            cursor.executemany(f"""
+            cursor.executemany(
+                f"""
                 INSERT INTO {table_name} (date, product, quantity, price, total)
                 VALUES (?, ?, ?, ?, ?)
-            """, records)
+            """,
+                records,
+            )
             conn.commit()
 
     except Exception as e:

@@ -1,16 +1,17 @@
-import sqlite3
-import threading
-import pandas as pd
 import os
+import sqlite3
 import sys
+import threading
 import time
+
+import pandas as pd
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )
 
-from utils.log_decorator import log_execution, logger
 from utils.compare_times import compare_execution_times
+from utils.log_decorator import log_execution, logger
 
 DB_PATH = "data/inputs/simulated_datalakedb/sales_data.db"
 
@@ -30,7 +31,9 @@ logger.success(banner_exercicio_5)
 def get_tables_from_db(db_path: str) -> list[str]:
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
-    cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%';")
+    cursor.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%';"
+    )
     tables = [row[0] for row in cursor.fetchall()]
     conn.close()
     return tables
@@ -52,6 +55,7 @@ def query_table(nome_tabela: str):
 
 tabelas = get_tables_from_db(DB_PATH)
 
+
 @log_execution
 def query_sequencial():
     """
@@ -63,6 +67,7 @@ def query_sequencial():
     end_time = time.time()
 
     return end_time - start_time
+
 
 @log_execution
 def query_parallel():
@@ -82,11 +87,13 @@ def query_parallel():
     end_time = time.time()
     return end_time - start_time
 
+
 def main():
 
     tempo_paralelo = query_parallel()
     tempo_sequencial = query_sequencial()
     compare_execution_times(tempo_sequencial, tempo_paralelo)
+
 
 if __name__ == "__main__":
     main()

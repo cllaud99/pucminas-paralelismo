@@ -1,12 +1,12 @@
+import multiprocessing as mp
 import os
+import string
 import sys
 import time
-import pandas as pd
-import multiprocessing as mp
-import string
-import numpy as np
-
 from typing import Tuple
+
+import numpy as np
+import pandas as pd
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
@@ -40,10 +40,7 @@ def generate_synthetic_data(n_rows: int = 10_000_000) -> pd.DataFrame:
     group_labels = np.random.choice(list(string.ascii_uppercase[:5]), size=n_rows)
     values = np.random.rand(n_rows) * 100
 
-    return pd.DataFrame({
-        "group": group_labels,
-        "value": values
-    })
+    return pd.DataFrame({"group": group_labels, "value": values})
 
 
 def transform_data(df: pd.DataFrame, queue: mp.Queue) -> None:

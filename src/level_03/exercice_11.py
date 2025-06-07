@@ -1,16 +1,17 @@
-import pandas as pd
 import os
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import List
 
+import pandas as pd
+
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )
 
-from utils.log_decorator import log_execution, logger
 from utils.compare_times import compare_execution_times
+from utils.log_decorator import log_execution, logger
 
 input_dir = "data/inputs/simulated_datalake_files"
 output_dir = "data/outputs/exercicio_11"
@@ -91,7 +92,10 @@ def etl_parallel() -> List[str]:
     """
     processed_files = []
     with ThreadPoolExecutor(max_workers=5) as executor:
-        futures = {executor.submit(process_partition, os.path.join(input_dir, file)): file for file in files}
+        futures = {
+            executor.submit(process_partition, os.path.join(input_dir, file)): file
+            for file in files
+        }
 
         for future in as_completed(futures):
             file_name = futures[future]

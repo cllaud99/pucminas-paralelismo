@@ -1,19 +1,20 @@
-import numpy as np
 import concurrent.futures
-import time
 import os
 import sys
+import time
+
+import numpy as np
 
 sys.path.insert(
     0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "src"))
 )
 
 from utils.compare_times import compare_execution_times
-
 from utils.log_decorator import logger
 
 # Simulando grandes arrays (listas) de números
 arrays = [np.random.randn(20_000_000) for _ in range(4)]  # 4 arrays grandes
+
 
 def normalize_array(arr: np.ndarray) -> np.ndarray:
     """
@@ -28,6 +29,7 @@ def normalize_array(arr: np.ndarray) -> np.ndarray:
     mean = np.mean(arr)
     std = np.std(arr)
     return (arr - mean) / std
+
 
 def sequential_processing(arrays):
     """
@@ -48,6 +50,7 @@ def sequential_processing(arrays):
     logger.info(f"Tempo sequencial: {total_time:.2f} segundos")
     return total_time
 
+
 def parallel_processing(arrays):
     """
     Processa os arrays em paralelo usando ProcessPoolExecutor.
@@ -66,6 +69,7 @@ def parallel_processing(arrays):
     logger.info(f"Tempo paralelo: {total_time:.2f} segundos")
     return total_time
 
+
 def main():
     logger.info("Iniciando processamento sequencial...")
     seq_time = sequential_processing(arrays)
@@ -74,6 +78,7 @@ def main():
     parallel_time = parallel_processing(arrays)
 
     compare_execution_times(seq_time, parallel_time)
+
 
 if __name__ == "__main__":
     main()

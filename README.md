@@ -76,6 +76,13 @@ Cada nível contém 5 exercícios numerados conforme a proposta da disciplina:
 ---
 
 ### ▶️ Como executar  
+
+Gere uma chave de api em: weatherapi.com (importante para o exercicio 01 somente)
+
+Instale o poetry:   
+https://python-poetry.org/docs/#installation
+
+
 Clone o repositório:
 
 ```bash
@@ -103,13 +110,37 @@ Este comando:
 
 ---
 
-### 🧪 Dependências principais  
-- threading, concurrent.futures  
-- pandas, pyarrow  
-- faker, requests, loguru  
-- FastAPI, Uvicorn, aiomultiprocess  
+### 🛠 Principais bibliotecas utilizadas
 
-As dependências estão especificadas no arquivo **pyproject.toml**.
+- **Python 3.12**  
+  Versão moderna e atual da linguagem, garantindo suporte a recursos recentes para melhor desempenho e produtividade.
+
+- **requests**  
+  Biblioteca para realizar chamadas HTTP, essencial para a comunicação com APIs externas e internas.
+
+- **python-dotenv**  
+  Para gerenciamento seguro e prático de variáveis de ambiente, facilitando a configuração do projeto.
+
+- **taskipy**  
+  Ferramenta para orquestração e execução de tarefas, ajudando na automação dos comandos do projeto.
+
+- **loguru**  
+  Biblioteca poderosa e simples para logging, utilizada junto com decoradores para monitoramento e debug eficientes.
+
+- **pandas**  
+  Biblioteca fundamental para manipulação e análise de dados, usada nas transformações e processamento dos datasets.
+
+- **faker**  
+  Geração de dados sintéticos realistas para testes e simulações, garantindo flexibilidade nos exercícios.
+
+- **fastapi**  
+  Framework moderno e rápido para criação da API simulada, suportando chamadas concorrentes.
+
+- **uvicorn**  
+  Servidor ASGI leve para rodar a API FastAPI localmente durante a execução do projeto.
+
+- **aiomultiprocess**  
+  Biblioteca para facilitar o uso de multiprocessamento assíncrono, aumentando a eficiência no processamento paralelo.
 
 ---
 
@@ -129,5 +160,5 @@ Durante a execução, uma API FastAPI é iniciada localmente na porta 8000, simu
 
 ### 📌 Observações  
 - Todos os exercícios foram projetados com foco em boas práticas de Engenharia de Dados.  
-- O projeto utiliza logs para acompanhamento e debug.  
+- O projeto utiliza logs para acompanhamento e debug, os logs foram versionados para demostrar a funcionalidade do exercicio 15
 - Simulações foram aplicadas para representar cenários reais de ETL e monitoramento.
